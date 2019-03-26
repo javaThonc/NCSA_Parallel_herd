@@ -587,7 +587,7 @@ public class herdHelperFunc {
     public static double [][] DataImport(){
         String fileName = "herd_13shedExcel.csv";
         File file = new File(fileName);
-        double[][] value = new double[3000][44];
+        double[][] value = new double[3000][45];
         try{
             Scanner inputStream = new Scanner(file);
             int x = 0;
@@ -685,7 +685,43 @@ public class herdHelperFunc {
         }
         return  value;
     }
+    /*
 
+    Create a matrix of cows by their milk value
+
+    */
+    public static double [][] select_cows_by_milk_value(int number){
+//        double [][] value = new double[number][10];
+//        final double[][] copy_herd = new double[herd.length][];
+//        for (int i = 0; i < herd.length; i++) {
+//            copy_herd[i] = Arrays.copyOf(herd[i], herd[i].length);
+//        }
+//        double [][] returnVal = get_sorted_herd(copy_herd, 44,0,0, false);
+//        // Invert to get the correct order
+//        for (int i = 0; i < returnVal.length/2; i++)
+//        {
+//            double[] temp = returnVal[i];
+//            returnVal[i] = returnVal[returnVal.length-1 - i];
+//            returnVal[returnVal.length-1 - i] = temp;
+//        }
+//        return  returnVal;
+        double [][] value = new double[getSize()][10];
+        int counter = 0;
+        for(int i = 0; i < getSize(); i++){
+            if(herd[i][3]==1||herd[i][3]==2||herd[i][3]==3||herd[i][3]==4){
+                value[counter][0] = herd[i][1];
+                value[counter][1] = herd[i][2];
+                value[counter][2] = herd[i][3];
+                value[counter][3] = herd[i][9];
+                value[counter][4] = herd[i][10];
+                value[counter][5] = herd[i][7];
+                value[counter][6] = herd[i][8];
+                value[counter][7] = herd[i][44];
+                counter++;
+            }
+        }
+        return  value;
+    }
     /*
 
     Create a matrix of cows by their ages
@@ -703,7 +739,7 @@ public class herdHelperFunc {
                 value[counter][4] = herd[i][10];
                 value[counter][5] = herd[i][7];
                 value[counter][6] = herd[i][8];
-
+                counter++;
             }
         }
         return  value;

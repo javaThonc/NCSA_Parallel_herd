@@ -463,7 +463,11 @@ public class herdRun {
 
                         if (numCows > herdParameter.herdLimit && herdParameter.allsusceptible == 0) {
                             // if number of cows is greater than the capacity of the herd AND MAP
-                            IdAgeC = herdHelperFunc.select_cows_by_age();
+                            /**
+                             * Instead of kill by age, we now kill by value of milkproduction !
+                             */
+//                            IdAgeC = herdHelperFunc.select_cows_by_age();
+                            IdAgeC = herdHelperFunc.select_cows_by_milk_value(numCows - herdParameter.herdLimit );
                             for (int n = 0; n < IdAgeC.length; n++) {
                                 if (IdAgeC[n][4] >= IdAgeC[n][3]) {
                                     IdAgeC[n][7] = 1;
@@ -471,11 +475,9 @@ public class herdRun {
                                 } else {
                                     IdAgeC[n][8] = IdAgeC[n][4]; // If DIM> MAP Days, place MAP Days in col. 8
                                 }
-
                                 if (IdAgeC[n][8] >= 1 && IdAgeC[n][2] == 4) {
                                     IdAgeC[n][9] = 1;
                                 }
-
                             }
                             IdAgeC = herdHelperFunc.get_sorted_herd(IdAgeC, 9, 1, 3, true);// Sort cows by Y2 with DIM >= 90, Age, DIM
                             for (int m = herdParameter.herdLimit + 1; m < IdAgeC.length; m++) {
@@ -491,7 +493,7 @@ public class herdRun {
                             IdAgeC = herdHelperFunc.select_susceptible_cows(); // Create new matrix of all cows
                             // matrix columns: 1 cow ID; 2 Age; 3 Parity; 4 Pregnant days;
                             // 5 DIM.
-                            IdAgeC = herdHelperFunc.get_sorted_herd(IdAgeC, 2, 3, 4, true);
+                            IdAgeC = herdHelperFunc.get_sorted_herd(IdAgeC, 7, 2, 3, true);
                             for (int m = herdParameter.herdLimit + 1; m < IdAgeC.length; m++) {
                                 for (int n = 0; n < herdHelperFunc.getSize(); n++) {
                                     if (IdAgeC[n][1] == herd[n][1]) {
