@@ -20,3 +20,4 @@ NCSA project utilizing the parallel programming skills to improve performance.
 - Rank the Cow by the value of herd (The value of NPV go up by approximately 300-400)
 - Try to run it on HTC
 - Fix the bug of Exponential Function
+- Introduce Beta
