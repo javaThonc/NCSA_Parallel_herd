@@ -705,7 +705,7 @@ public class herdHelperFunc {
 //            returnVal[returnVal.length-1 - i] = temp;
 //        }
 //        return  returnVal;
-        double [][] value = new double[getSize()][10];
+        double [][] value = new double[getSize()][11];
         int counter = 0;
         for(int i = 0; i < getSize(); i++){
             if(herd[i][3]==1||herd[i][3]==2||herd[i][3]==3||herd[i][3]==4){
@@ -716,7 +716,7 @@ public class herdHelperFunc {
                 value[counter][4] = herd[i][10];
                 value[counter][5] = herd[i][7];
                 value[counter][6] = herd[i][8];
-                value[counter][7] = herd[i][44];
+                value[counter][10] = herd[i][44];
                 counter++;
             }
         }
@@ -905,7 +905,7 @@ public class herdHelperFunc {
     // Clean up all the herd with -1 ID
     public static double[][] clean_up_herd(){
         int new_size = 0;
-        double [][]new_herd = new double[3000][43];
+        double [][]new_herd = new double[3000][45];
         for(int i =0; i < getSize(); i++){
             if(herd[i][1]!=-1){
                 new_herd[new_size] = herd[i];

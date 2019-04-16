@@ -59,8 +59,8 @@ public class herdRun {
             }
             long startTime = System.currentTimeMillis();
             for(int jj = 1; jj <= herdParameter.MaxSim; jj++) {
-                startTime = System.currentTimeMillis();
                 double[][] herd = herdHelperFunc.DataImport();
+
                 for (int i = 0; i < herdHelperFunc.getSize(); i++){
                     herd[i][0]=0;
                     herd[i][19]=0;
@@ -159,7 +159,10 @@ public class herdRun {
                 int[][] TBHist = new int[1][8]; // Store all animals not bTB Susceptible: ID, time Occult, time Infective, time death.
                 // ID, time Occult Calf (2), tICalf (3), tOH (4), tIH (5), tOC (6), tIC (7), time dead
                 for (int t = 1; t <= herdParameter.T; t++) {
-                    System.out.println("Today is " + t);
+                    if(t%100 == 0){
+                        long elapse = System.currentTimeMillis() - startTime;
+                        System.out.println(elapse);
+                    }
                     double A[] = new double[9];
                     // SHOULD IT BE 1956!! NO GENERALLY ENOUGH
                     if(t == 7300){
@@ -401,7 +404,7 @@ public class herdRun {
                     N_total_Time[t][8] = herdParameter.HI_i;
                     int num_male = 0; // Counter of number of Male Calves born
                     int num_calf = 0; // Counter of number of Female Calves born
-
+                    herdParameter.Beta++;
                     //1956 is the size of herd
                     int size = herdHelperFunc.getSize();
                     ArrayList<Thread> arrThreads = new ArrayList<Thread>();
@@ -410,14 +413,13 @@ public class herdRun {
                                 S_Inf_AA_mid, S_Inf_AA_late, S_Inf_AC_dry, S_Inf_AC_early, S_Inf_AC_mid,
                                 S_Inf_AC_late, InsemCost, PregnancyDiagnosis, C_Inf, maxMAPDays , MatureWeight,
                                 HighShedFeedCostFactorNoMilk, HighShedFeedCostFactorMilkProd, FixedVarsCostDay, CostCalf,
-                                id, S_Inf_AC);
+                                id, S_Inf_AC, herdParameter.Beta);
                         singleThread.start();
                         arrThreads.add(singleThread);
                     }
                     for (int i = 0; i < arrThreads.size(); i++) {
                         arrThreads.get(i).join();
                     }
-                    System.out.println("All collect!");
                     ////// End of the Herd Loop ////////
 
                     /*
@@ -464,7 +466,7 @@ public class herdRun {
                         if (numCows > herdParameter.herdLimit && herdParameter.allsusceptible == 0) {
                             // if number of cows is greater than the capacity of the herd AND MAP
                             /**
-                             * Instead of kill by age, we now kill by value of milkproduction !
+                             * Instead of kill by age, we now kill by value of milk production !
                              */
 //                            IdAgeC = herdHelperFunc.select_cows_by_age();
                             IdAgeC = herdHelperFunc.select_cows_by_milk_value(numCows - herdParameter.herdLimit );
@@ -479,7 +481,7 @@ public class herdRun {
                                     IdAgeC[n][9] = 1;
                                 }
                             }
-                            IdAgeC = herdHelperFunc.get_sorted_herd(IdAgeC, 9, 1, 3, true);// Sort cows by Y2 with DIM >= 90, Age, DIM
+                            IdAgeC = herdHelperFunc.get_sorted_herd(IdAgeC, 10, 9, 1, true);// Sort cows by Y2 with DIM >= 90, Age, DIM
                             for (int m = herdParameter.herdLimit + 1; m < IdAgeC.length; m++) {
                                 for (int n = 0; n < herdHelperFunc.getSize(); n++) {
                                     if (herd[n][1] == IdAgeC[n][1]) {
@@ -488,12 +490,11 @@ public class herdRun {
                                     }
                                 }
                             }
-
                         } else if (numCows > herdParameter.herdLimit && herdParameter.allsusceptible == 1) { // if number of cows is greater than the capacity of the herd AND NO MAP
                             IdAgeC = herdHelperFunc.select_susceptible_cows(); // Create new matrix of all cows
                             // matrix columns: 1 cow ID; 2 Age; 3 Parity; 4 Pregnant days;
                             // 5 DIM.
-                            IdAgeC = herdHelperFunc.get_sorted_herd(IdAgeC, 7, 2, 3, true);
+                            IdAgeC = herdHelperFunc.get_sorted_herd(IdAgeC, 2, 3, 4, true);
                             for (int m = herdParameter.herdLimit + 1; m < IdAgeC.length; m++) {
                                 for (int n = 0; n < herdHelperFunc.getSize(); n++) {
                                     if (IdAgeC[n][1] == herd[n][1]) {
@@ -674,11 +675,12 @@ public class herdRun {
                         Total_Calves[t][3] = DeadAnimals[t][6] * FemaleCalfPrice / Math.pow((1 + dailyirate), daysInt); // Revenue from sale of Female calves due to Over Limit
                         Total_Calves[t][5] = DeadAnimals[t][7] * HeiferReplCost / Math.pow((1 + dailyirate), daysInt); // Revenue from selling pregnant heifers
                         // If culled by open or over parity, and voluntary culling // Calculate Discounted Gross Profit after WarmUp Period
-                        NumCulledCows[t][1] = Math.pow((NumCulledCows[t][0] + NumDeath[t][11]) * CullPriceAdjusted / (1 + dailyirate), daysInt);
+                        NumCulledCows[t][1] = (NumCulledCows[t][0] + NumDeath[t][11]) * CullPriceAdjusted / Math.pow((1 + dailyirate), daysInt);
                         Total_Exp[t][0] = Math.pow(herdHelperFunc.get_sum_col(12) / (1 + dailyirate), daysInt); // Total Management Changes and Interventions Expenses
                     }
                     // Using Function of BW and DMI
                     // Store in the NPV Matrix for each time period
+
                     NPV[t][0]= herdHelperFunc.get_sum_col(25);     // NPV of net milk revenue of animal per day (using function of BW, DMI)
                     NPV[t][1]= NumCulledCows[t][1];   // NPV of selling culled cows
                     NPV[t][2]= Total_Calves[t][2];    // NPV of Male Calves Sale
@@ -731,8 +733,6 @@ public class herdRun {
                         if(herd[i][5]!=0){
                             par_count[(int)herd[i][5]-1]++;
                         }
-
-
                     }
                     writer.print(jj + ",");
                     writer.print(t + ",");
@@ -748,17 +748,26 @@ public class herdRun {
                         writer.print(par_count[i] + ",");
                     }
                     writer.println(par_count[7]);
-                    if(t==7000){
+                    if(t==7200){
                         for (int i = 0; i< herdHelperFunc.getSize(); i++){
                             for (int j =0; j < 43; j++){
                                 System.out.print(herd[i][j] + " ");
                             }
                             System.out.println();
                         }
-
-                        System.out.println("sdf");
+                        break;
                     }
                 }
+                double[] NPVSim = new double [7];
+                for(int day =0; day < 7200; day++){
+                    for(int col =0; col < 7; col++){
+                        NPVSim[col] += NPV[day][col];
+                    }
+                }
+                for(int col =0; col < 7; col++){
+                    System.out.print(NPVSim[col]);
+                }
+                System.out.println("Beta: " + herdParameter.Beta);
             }
         }
         writer.close();

@@ -27,6 +27,7 @@ public class threadHerd extends Thread{
     private double CostCalf;
     private double id;
     private double S_Inf_AC;
+    private int Beta;
 
     /**
      * Initial the parameters with the input constructor and prepare for use in
@@ -59,7 +60,7 @@ public class threadHerd extends Thread{
                       double S_Inf_AA_mid, double S_Inf_AA_late, double S_Inf_AC_dry, double S_Inf_AC_early, double S_Inf_AC_mid,
                       double S_Inf_AC_late, int InsemCost, int PregnancyDiagnosis, double C_Inf, int maxMAPDays , int MatureWeight,
                       double HighShedFeedCostFactorNoMilk, double HighShedFeedCostFactorMilkProd, double FixedVarsCostDay, double CostCalf,
-                      double id, double S_Inf_AC){
+                      double id, double S_Inf_AC, int Beta){
         this.herd = herd;
         this.i=i;
         this.t=t;
@@ -84,6 +85,7 @@ public class threadHerd extends Thread{
         this.CostCalf = CostCalf;
         this.id =id;
         this.S_Inf_AC= S_Inf_AC;
+        this.Beta = Beta;
     }
 
     public void run(){
@@ -774,8 +776,9 @@ public class threadHerd extends Thread{
         /**
          * Important change: create a new column that represent the sum of the milk production
          */
-        herd[i][43]+=milk;
+        herd[i][43]+= milk;
         // (int)herd[i][5] is parity number and herd[i][43] is milk sum
-        herd[i][44] = herdHelperFunc.ME305((int)dim, (int)herd[i][5], herd[i][43]);
+        int Repro = herd[i][7] > 0 ? 1 : 0;
+        herd[i][44] = herdHelperFunc.ME305((int)dim, (int)herd[i][5], herd[i][43]) + Beta * Repro;
     }
 }
