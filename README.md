@@ -21,6 +21,8 @@ NCSA project utilizing the parallel programming skills to improve performance.
 - Change the sorting order of the herd(line:490) [9->10]
 - Rank the Cow by the value of herd (The value of NPV go up by approximately 300-400)
 - Try to run it on HTC
+  - Finish the first version of the sub and create simplified submission 
+  - Future and more work, integrate Beta into the script file and make it easier to use
 - Fix the bug of Exponential Function
 - Introduce Beta
 
@@ -33,19 +35,24 @@ NCSA project utilizing the parallel programming skills to improve performance.
  
 ## A simple guide to Condor script file
 ``` 
-  ####################
+`####################
   #
   # Running a mutiple threads version of herd simulation by Professor Rebecca Smith
   # Execute the main class named herdRun
   #
   ####################
 
-  universe       = java 
+  universe       = java
   executable     = herdRun.class
-  arguments      = Hello
+  transfer_input_files = herdHelperFunc$1.class, herdParameter.class,herdHelperFunc.class, threadHerd.class
+  arguments      = herdRun
   output         = herdRun.output
   error          = herdRun.error
   queue
  ```
- error file is stored in herdRun.error and output is stored in herdRun.output, which can be vieded by 'cat' command
+ - error file is stored in herdRun.error and output is stored in herdRun.output(open with cat)
+ - transfer_input_files is the sub-java classes that need to be specified for HTC to run
+ - executable is the java classes with main
+ 
+ 
 
