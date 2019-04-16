@@ -1,7 +1,6 @@
 # NCSA_Parllel_herd
 NCSA project utilizing the parallel programming skills to improve performance.
 
-# A simple guide to the HTC_Condor commands
 
 
 
@@ -26,3 +25,4 @@ NCSA project utilizing the parallel programming skills to improve performance.
 - Introduce Beta
 
 
+## A simple guide to the HTC_Condor commands
