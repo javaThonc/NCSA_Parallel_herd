@@ -1,0 +1,15 @@
+####################
+  #
+  # Running a mutiple threads version of herd simulation by Professor Rebecca Smith
+  # Execute the main class named herdRun
+  #
+  ####################
+
+  universe       = java
+  executable     = herdRun.class
+  transfer_input_files = herdHelperFunc$1.class, herdParameter.class,herdHelperFunc.class, threadHerd.class
+  arguments      = herdRun
+  output         = herdRun.output
+  error          = herdRun.error
+  queue
+
