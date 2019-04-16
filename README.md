@@ -28,10 +28,14 @@ NCSA project utilizing the parallel programming skills to improve performance.
 
 
 ## A simple guide to the HTC_Condor commands
+  - General procedure to run a job on HTC
+    1. Move to the src filecd ``` cd NCSA_Parllel_herd/JAVAPROJECT/src/``` 
+    2. Compile the java file with javac ```javac *.java ``` 
+    3. submit a job ```condor_submit herd.sub ``` 
   - Useful commands
-    - ``` condor_submit herd.sub``` (target script file) [submit the job to the cluster and return the clustervalue]
     - ``` condor_q```  [check the current status of the job]
     - ``` condor_rm 9239``` (campus cluster number) [remove the job by number]
+    - ``` condor_rm 9239 | grep 9239``` [When there are a lot of jobs and find to find a specfic one] 
  
 ## A simple guide to Condor script file
 ``` 
