@@ -32,7 +32,8 @@ NCSA project utilizing the parallel programming skills to improve performance.
     - condor_rm 9239(campus cluster number) [remove the job by number]
  
 ## A simple guide to Condor script file
- " ####################
+``` 
+  ####################
   #
   # Running a mutiple threads version of herd simulation by Professor Rebecca Smith
   # Execute the main class named herdRun
@@ -44,5 +45,6 @@ NCSA project utilizing the parallel programming skills to improve performance.
   arguments      = Hello
   output         = herdRun.output
   error          = herdRun.error
-  queue"
+  queue
+ ```
 
