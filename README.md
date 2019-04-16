@@ -52,11 +52,12 @@ NCSA project utilizing the parallel programming skills to improve performance.
   arguments      = herdRun
   output         = herdRun.output
   error          = herdRun.error
+  notification   = Always
   queue
  ```
  - Error file is stored in herdRun.error and output is stored in herdRun.output(open with cat)
  - Transfer_input_files is the sub-java classes that need to be specified for HTC to run
  - Executable is the java classes with main
- 
+ - Notification can be set to <Always|Error|Complete>
  
 
