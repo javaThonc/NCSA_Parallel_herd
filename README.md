@@ -50,9 +50,9 @@ NCSA project utilizing the parallel programming skills to improve performance.
   error          = herdRun.error
   queue
  ```
- - error file is stored in herdRun.error and output is stored in herdRun.output(open with cat)
- - transfer_input_files is the sub-java classes that need to be specified for HTC to run
- - executable is the java classes with main
+ - Error file is stored in herdRun.error and output is stored in herdRun.output(open with cat)
+ - Transfer_input_files is the sub-java classes that need to be specified for HTC to run
+ - Executable is the java classes with main
  
  
 
