@@ -27,9 +27,9 @@ NCSA project utilizing the parallel programming skills to improve performance.
 
 ## A simple guide to the HTC_Condor commands
   - Useful commands
-    - condor_submit herd.sub(target script file) [submit the job to the cluster and return the clustervalue]
-    - condor_q [check the current status of the job]
-    - condor_rm 9239(campus cluster number) [remove the job by number]
+    - ``` condor_submit herd.sub``` (target script file) [submit the job to the cluster and return the clustervalue]
+    - ``` condor_q```  [check the current status of the job]
+    - ``` condor_rm 9239``` (campus cluster number) [remove the job by number]
  
 ## A simple guide to Condor script file
 ``` 
