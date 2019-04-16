@@ -47,4 +47,5 @@ NCSA project utilizing the parallel programming skills to improve performance.
   error          = herdRun.error
   queue
  ```
+ error file is stored in herdRun.error and output is stored in herdRun.output, which can be vieded by 'cat' command
 
