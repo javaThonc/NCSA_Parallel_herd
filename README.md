@@ -1,6 +1,9 @@
 # NCSA_Parllel_herd
 NCSA project utilizing the parallel programming skills to improve performance.
 
+# A simple guide to the HTC_Condor commands
+
+
 
 
 ## Week March 20th
@@ -21,3 +24,5 @@ NCSA project utilizing the parallel programming skills to improve performance.
 - Try to run it on HTC
 - Fix the bug of Exponential Function
 - Introduce Beta
+
+
