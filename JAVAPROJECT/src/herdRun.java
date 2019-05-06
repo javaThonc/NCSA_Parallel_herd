@@ -159,6 +159,7 @@ public class herdRun {
                 int[][] TBHist = new int[1][8]; // Store all animals not bTB Susceptible: ID, time Occult, time Infective, time death.
                 // ID, time Occult Calf (2), tICalf (3), tOH (4), tIH (5), tOC (6), tIC (7), time dead
                 for (int t = 1; t <= herdParameter.T; t++) {
+                    System.out.println("Today is "+ t);
                     if(t%100 == 0){
                         long elapse = System.currentTimeMillis() - startTime;
                         System.out.println(elapse);
