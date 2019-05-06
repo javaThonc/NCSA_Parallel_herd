@@ -15,7 +15,8 @@ import java.io.FileNotFoundException;
 
 public class herdRun {
     public static void main(String[] args) throws InterruptedException {
-        PrintWriter writer = null;
+        System.out.println("Start running");
+	PrintWriter writer = null;
         try {
             writer = new PrintWriter("database.txt","UTF-8");
         } catch (FileNotFoundException e) {
@@ -74,7 +75,7 @@ public class herdRun {
                     }
                 }
                 double id = herd[herdHelperFunc.getSize() - jj][1];//max ID
-
+		System.out.println("HELLO");
                 String[] HerdName = {"Time", "ID", "Age", "InfStatus", "LactStatus", "Parity", "ParityAge",
                         "PregnantDays", "FailedAI", "DIM", "MAPDays", "MilkProd", "FeedCosts", "MilkRev", "Dead", "MilkCostDisc", "MilkRevDisc", "Inseminations", "TimetoCullFailAI"};
 
@@ -159,7 +160,8 @@ public class herdRun {
                 int[][] TBHist = new int[1][8]; // Store all animals not bTB Susceptible: ID, time Occult, time Infective, time death.
                 // ID, time Occult Calf (2), tICalf (3), tOH (4), tIH (5), tOC (6), tIC (7), time dead
                 for (int t = 1; t <= herdParameter.T; t++) {
-                    if(t%100 == 0){
+                    System.out.println("Today is " + t);
+		    if(t%100 == 0){
                         long elapse = System.currentTimeMillis() - startTime;
                         System.out.println(elapse);
                     }
