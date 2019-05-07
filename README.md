@@ -31,15 +31,15 @@ NCSA project utilizing the parallel programming skills to improve performance.
   - General procedure to run a job on HTC
     1. Move to the src filecd ``` cd NCSA_Parllel_herd/JAVAPROJECT/src/``` 
     2. Compile the java file with javac ```javac *.java ``` 
-    3. submit a job ```condor_submit herd.sub ``` 
+    3. submit a job ```condor_submit herd.cmd ``` 
   - Useful commands
     - ``` condor_q```  [check the current status of the job]
-    - ``` condor_rm 9239``` (campus cluster number) [remove the job by number]
-    - ``` condor_rm 9239 | grep 9239``` [When there are a lot of jobs and find to find a specfic one] 
+    - ``` condor_rm [9239]``` (campus cluster number) [remove the job by number]
+    - ``` condor_rm [9239] | grep [9239]``` [When there are a lot of jobs and find to find a specfic one] 
  
 ## A simple guide to Condor script file
 ``` 
-`####################
+  ####################
   #
   # Running a mutiple threads version of herd simulation by Professor Rebecca Smith
   # Execute the main class named herdRun
@@ -48,11 +48,14 @@ NCSA project utilizing the parallel programming skills to improve performance.
 
   universe       = java
   executable     = herdRun.class
-  transfer_input_files = herdHelperFunc$1.class, herdParameter.class,herdHelperFunc.class, threadHerd.class
+  transfer_input_files = herdHelperFunc$1.class,herdHelperFunc.class,threadHerd.class,herdParameter.class,herd_13shedExcel.csv
   arguments      = herdRun
   output         = herdRun.output
   error          = herdRun.error
-  notification   = Always
+  Log            = myexe.log
+  should_transfer_files = YES
+  when_to_transfer_output = ON_EXIT
+  notification   = always
   queue
  ```
  - Error file is stored in herdRun.error and output is stored in herdRun.output(open with cat)
