@@ -1,0 +1,8 @@
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at herdHelperFunc.get_NumCullInf(herdHelperFunc.java:973)
+	at herdRun.main(herdRun.java:650)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at CondorJavaWrapper.main(CondorJavaWrapper.java:106)
