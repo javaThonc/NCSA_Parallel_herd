@@ -24,7 +24,7 @@ public class herdRun {
 //            e.printStackTrace();
 //        }
         int LimitCalves = 83,TbInfectionYN,TBTestControl,TimeIntervalTests,NumTbInfHeif,NumConsNegWHTRemoval,MaxNumAssuranceTest;
-        for (int scenarioSim = 1; scenarioSim<=4; scenarioSim++){
+        for (int scenarioSim = 1; scenarioSim<=1; scenarioSim++){
             if (scenarioSim== 1){
                 // Scenario 1
                 // 1 bTB. Alt, B. 8/1, 334 iterations only.
