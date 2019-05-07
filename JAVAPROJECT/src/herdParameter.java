@@ -8,7 +8,7 @@ import static java.lang.Math.ceil;
 
 public class herdParameter {
     //// Parameters and variables of the Model
-    static final int MaxSim= 100 ; // Number of iterations
+    static final int MaxSim= 1 ; // Number of iterations
 
     // For Tb only: WarmUp= 3000, Stability= 0
     static final int WarmUp= 0; // Set to 0 if starting simulation from the same herd.

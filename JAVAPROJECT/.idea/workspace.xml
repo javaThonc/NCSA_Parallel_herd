@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9845f12c-21a0-4e22-bba5-435f6fe95488" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVAPROJECT/herdRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVAPROJECT/herdRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/herdParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/herdParameter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/herdRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/herdRun.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/herdRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="161" column="53" selection-start-line="161" selection-start-column="53" selection-end-line="161" selection-end-column="53" />
+            <state relative-caret-position="190">
+              <caret line="411" column="50" lean-forward="true" selection-start-line="411" selection-start-column="50" selection-end-line="411" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,15 +29,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database.txt">
+        <entry file="file://$PROJECT_DIR$/database_scenario1.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/herdParameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="46" column="36" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="36" />
+            <state relative-caret-position="55">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/threadHerd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11685">
+            <state relative-caret-position="11108">
               <caret line="781" column="97" selection-start-line="781" selection-start-column="92" selection-end-line="781" selection-end-column="97" />
             </state>
           </provider>
@@ -55,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/herdHelperFunc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4155">
-              <caret line="587" column="27" selection-start-line="587" selection-start-column="27" selection-end-line="587" selection-end-column="27" />
+            <state relative-caret-position="281">
+              <caret line="587" column="47" lean-forward="true" selection-start-line="587" selection-start-column="27" selection-end-line="587" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5458#6166#0" />
@@ -85,9 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sort</find>
-      <find>Impor</find>
-      <find>import</find>
       <find>DataImport</find>
       <find>clean</find>
       <find>clean_up_herd</find>
@@ -97,7 +96,6 @@
       <find>milk</find>
       <find>NPV</find>
       <find>time</find>
-      <find>System.</find>
       <find>price</find>
       <find>NumCulledCows</find>
       <find>NumCulledCows[t][1]</find>
@@ -109,12 +107,16 @@
       <find>herd[n][9]</find>
       <find>[i][8]</find>
       <find>herdRun</find>
-      <find>Beta</find>
-      <find>MaxSim</find>
       <find>Syste</find>
       <find>fidn</find>
       <find>open</find>
       <find>NPVSim</find>
+      <find>herdParameter.Beta</find>
+      <find>T</find>
+      <find>Beta</find>
+      <find>MaxSim</find>
+      <find>writer</find>
+      <find>System.</find>
     </findStrings>
     <replaceStrings>
       <replace>N_total_Time[t]</replace>
@@ -125,6 +127,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="new" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -184,7 +191,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557175463467" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557204924674" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
@@ -264,9 +271,9 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -311,15 +318,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/herdRun.java</url>
-          <line>160</line>
+          <line>161</line>
           <properties />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/herdRun.java</url>
-          <line>415</line>
-          <properties />
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -335,43 +336,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database with new herd.txt">
+    <entry file="file://$PROJECT_DIR$/src/herdParameter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1741" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/herdHelperFunc$1.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/herdRun.java">
+    <entry file="file://$PROJECT_DIR$/src/herdHelperFunc.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="161" column="53" selection-start-line="161" selection-start-column="53" selection-end-line="161" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-11352" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/herdRun.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/threadHerd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8104" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/herdParameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="46" column="36" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/database with new herd.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_7000.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_scenario1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/threadHerd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11685">
+        <state relative-caret-position="11108">
           <caret line="781" column="97" selection-start-line="781" selection-start-column="92" selection-end-line="781" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/herdHelperFunc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4155">
-          <caret line="587" column="27" selection-start-line="587" selection-start-column="27" selection-end-line="587" selection-end-column="27" />
+        <state relative-caret-position="281">
+          <caret line="587" column="47" lean-forward="true" selection-start-line="587" selection-start-column="27" selection-end-line="587" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5458#6166#0" />
@@ -384,6 +392,29 @@
             <element signature="e#15156#16109#0" />
             <element signature="e#16115#16543#0" />
             <element signature="e#16548#19623#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_new_herd.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/herdParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/herdRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="411" column="50" lean-forward="true" selection-start-line="411" selection-start-column="50" selection-end-line="411" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
