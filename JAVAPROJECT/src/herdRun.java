@@ -162,11 +162,11 @@ public class herdRun {
                 int BetaRange = 100;
                 for(int Beta = startBeta; Beta < BetaRange; Beta++){
                     for (int t = 1; t <= herdParameter.T; t++) {
-                        System.out.println("Today is "+ t);
-                        if(t%100 == 0){
-                            long elapse = System.currentTimeMillis() - startTime;
-                            System.out.println(elapse);
-                        }
+                        //System.out.println("Today is "+ t);
+                        //if(t%100 == 0){
+                          //  long elapse = System.currentTimeMillis() - startTime;
+                           // System.out.println(elapse);
+                       // }
                         double A[] = new double[9];
                         // SHOULD IT BE 1956!! NO GENERALLY ENOUGH
                         if(t == 7300){
@@ -768,9 +768,10 @@ public class herdRun {
                             NPVSim[col] += NPV[day][col];
                         }
                     }
-                    for(int col =0; col < 7; col++){
-                        System.out.print(NPVSim[col]);
+                    for(int col =0; col < 6; col++){
+                        System.out.print(NPVSim[col]+" ");
                     }
+		    System.out.println(NPVSim[6]);	
                     System.out.println("Beta: " + Beta);
                 }
             }
